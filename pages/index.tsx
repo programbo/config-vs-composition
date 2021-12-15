@@ -22,29 +22,29 @@ export default function Home() {
           title="Implementation"
           data={`<Chart showLabels showValues>
   <Chart.Bar label="Albany Hospital">
-    <Chart.BarSegment label="Albany Hospital mnisplaced 52 patients" value={52} color="#009FAE" />
+    <Chart.BarSegment label="Albany Hospital misplaced 52 patients" value={52} color="#009FAE" />
   </Chart.Bar>
   <Chart.Bar label="Armidale-Kelmscott Memorial Hospital">
     <Chart.BarSegment
-      label="Armidale-Kelmscott Memorial Hospital mnisplaced 62 patients"
+      label="Armidale-Kelmscott Memorial Hospital misplaced 62 patients"
       value={62}
       color="#009FAE"
     />
   </Chart.Bar>
   <Chart.Bar label="Fremantle Hospital">
-    <Chart.BarSegment label="Fremantle Hospital mnisplaced 73 patients" value={73} color="#009FAE" />
+    <Chart.BarSegment label="Fremantle Hospital misplaced 73 patients" value={73} color="#009FAE" />
   </Chart.Bar>
   <Chart.Bar label="Joondalup Health Campus">
-    <Chart.BarSegment label="Joondalup Health Campus mnisplaced 32 patients" value={32} color="#009FAE" />
+    <Chart.BarSegment label="Joondalup Health Campus misplaced 32 patients" value={32} color="#009FAE" />
   </Chart.Bar>
   <Chart.Bar label="Princess Margaret Hospital">
-    <Chart.BarSegment label="Princess Margaret Hospital mnisplaced 69 patients" value={69} color="#009FAE" />
+    <Chart.BarSegment label="Princess Margaret Hospital misplaced 69 patients" value={69} color="#009FAE" />
   </Chart.Bar>
   <Chart.Bar label="Rockingham Hospital">
-    <Chart.BarSegment label="Rockingham Hospital mnisplaced 88 patients" value={88} color="#009FAE" />
+    <Chart.BarSegment label="Rockingham Hospital misplaced 88 patients" value={88} color="#009FAE" />
   </Chart.Bar>
   <Chart.Bar label="Royal Perth Hospital">
-    <Chart.BarSegment label="Royal Perth Hospital mnisplaced 68 patients" value={68} color="#009FAE" />
+    <Chart.BarSegment label="Royal Perth Hospital misplaced 68 patients" value={68} color="#009FAE" />
   </Chart.Bar>
 </Chart>
 
@@ -124,29 +124,29 @@ export default function Home() {
         <div className="flex flex-col w-full divide-y space-y-14">
           <Chart showLabels showValues>
             <Chart.Bar label="Albany Hospital">
-              <Chart.BarSegment label="Albany Hospital mnisplaced 52 patients" value={52} color="#009FAE" />
+              <Chart.BarSegment label="Albany Hospital misplaced 52 patients" value={52} color="#009FAE" />
             </Chart.Bar>
             <Chart.Bar label="Armidale-Kelmscott Memorial Hospital">
               <Chart.BarSegment
-                label="Armidale-Kelmscott Memorial Hospital mnisplaced 62 patients"
+                label="Armidale-Kelmscott Memorial Hospital misplaced 62 patients"
                 value={62}
                 color="#009FAE"
               />
             </Chart.Bar>
             <Chart.Bar label="Fremantle Hospital">
-              <Chart.BarSegment label="Fremantle Hospital mnisplaced 73 patients" value={73} color="#009FAE" />
+              <Chart.BarSegment label="Fremantle Hospital misplaced 73 patients" value={73} color="#009FAE" />
             </Chart.Bar>
             <Chart.Bar label="Joondalup Health Campus">
-              <Chart.BarSegment label="Joondalup Health Campus mnisplaced 32 patients" value={32} color="#009FAE" />
+              <Chart.BarSegment label="Joondalup Health Campus misplaced 32 patients" value={32} color="#009FAE" />
             </Chart.Bar>
             <Chart.Bar label="Princess Margaret Hospital">
-              <Chart.BarSegment label="Princess Margaret Hospital mnisplaced 69 patients" value={69} color="#009FAE" />
+              <Chart.BarSegment label="Princess Margaret Hospital misplaced 69 patients" value={69} color="#009FAE" />
             </Chart.Bar>
             <Chart.Bar label="Rockingham Hospital">
-              <Chart.BarSegment label="Rockingham Hospital mnisplaced 88 patients" value={88} color="#009FAE" />
+              <Chart.BarSegment label="Rockingham Hospital misplaced 88 patients" value={88} color="#009FAE" />
             </Chart.Bar>
             <Chart.Bar label="Royal Perth Hospital">
-              <Chart.BarSegment label="Royal Perth Hospital mnisplaced 68 patients" value={68} color="#009FAE" />
+              <Chart.BarSegment label="Royal Perth Hospital misplaced 68 patients" value={68} color="#009FAE" />
             </Chart.Bar>
           </Chart>
 
@@ -230,7 +230,41 @@ export default function Home() {
           title="Implementation"
           data={`<MultidimensionalChart {...chart2} />
 <MultidimensionalChart className="pt-10" {...chart3} />
-<MultidimensionalChart className="pt-12" {...chart1} />`}
+<MultidimensionalChart
+  className="pt-12"
+  {...chart1}
+  caption={
+    <table>
+      <thead>
+        <tr>
+          <th colSpan={2}>Medical Benefits Schedule (MBS) fee</th>
+          <th colSpan={2}>Medical Gap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fully covered</td>
+          <td>75% of MBS fee paid by Medicare</td>
+          <td>25% of MBS fee paid by HBF</td>
+          <td colSpan={2}>25% of Medical Gap paid by HBF</td>
+        </tr>
+        <tr>
+          <td>Known gap</td>
+          <td>75% of MBS fee paid by Medicare</td>
+          <td>25% of MBS fee paid by HBF</td>
+          <td>12.5% of Medical Gap paid by HBF</td>
+          <td>You pay 12.5% of Medical Gap</td>
+        </tr>
+        <tr>
+          <td>No agreement / Opt out</td>
+          <td>75% of MBS fee paid by Medicare</td>
+          <td>25% of MBS fee paid by HBF</td>
+          <td colSpan={2}>You pay 25% of Medical Gap</td>
+        </tr>
+      </tbody>
+    </table>
+  }
+/>`}
         />
         <div className="flex flex-col w-full divide-y space-y-14">
           <MultidimensionalChart {...chart2} />

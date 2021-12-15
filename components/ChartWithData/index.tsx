@@ -59,10 +59,7 @@ export function MultidimensionalChart({
           className="mt-6"
           title="View chart data"
           data={{
-            className,
             headings,
-            caption,
-            legend,
             bars,
             showLabels,
             showValues,

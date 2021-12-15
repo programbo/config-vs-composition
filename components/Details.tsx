@@ -27,9 +27,8 @@ export const Details: FC<DetailsProps> = ({ title, data, className, type, classe
       <span className={classes?.summary}>{title}</span>
     </summary>
 
-    <Highlight className={clsx(type, 'relative pt-4 overflow-auto text-xs bg-transparent')}>
+    <Highlight className={clsx(type, 'relative !p-4 !pt-6  overflow-auto text-xs !bg-transparent')}>
       {typeof data === 'object' ? JSON.stringify(data, null, 2) : data}
     </Highlight>
-    {/* <pre className="pt-4 overflow-auto text-xs">{typeof data === 'object' ? JSON.stringify(data, null, 2) : data}</pre> */}
   </details>
 )
