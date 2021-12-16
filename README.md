@@ -1,28 +1,25 @@
-# Next.js + Tailwind CSS Example
+# Multidimensional Charts
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+Chart component prototyped with TailwindCSS 3.0 on Next.js 12.
 
-## Preview
+[A deployed demo can be found here 🚀](https://config-vs-composition.vercel.app)
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+## Config vs Composition
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+The component has been implemented two different ways:
 
-## Deploy your own
+1. [Chart with data](https://github.com/programbo/config-vs-composition/tree/main/components/ChartWithData) requires [chart data](https://github.com/programbo/config-vs-composition/tree/main/components/ChartWithData/data) to be supplied via the `bars` prop
+   ```
+   <Chart ... bars={chartData} />
+   ```
+2. [Chart with children](https://github.com/programbo/config-vs-composition/tree/main/components/ChartWithChildren) requires charts to be composed by nesting child components.
+   ```
+   <Chart ...>
+     <Chart.Bar ...>
+       <Chart.BarSegment ... />
+       <Chart.BarSegment ... />
+     <Chart.Bar ...>
+   </Chart>
+   ```
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-# config-vs-composition
+![screenshot of charts](https://user-images.githubusercontent.com/1026196/146324699-dcc0f1f2-3719-4c8a-bc70-e2047b966ec7.png)
